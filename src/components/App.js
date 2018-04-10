@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Welcome from './Welcome';
+import Welcome from './Welcome';  
 // import Search from './Search';
 import CurrentWeather from './CurrentWeather';
 import SevenHour from './SevenHour';
@@ -11,24 +11,44 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      weatherData: data
+      citySearched: null,
+      sevenHourData: null,
+      tenDayData: null, 
+      currentWeatherData: null,
+      showWelcome: true
     };
+    
+    this.toggleWelcome = this.toggleWelcome.bind(this);
+  }
+
+  toggleWelcome() {
+    this.setState({
+      showWelcome: false
+    })
   }
 
   render() {
     return (
       <div className="Weathrly">
+         { this.state.showWelcome && <Welcome 
+                                        citySearched={this.state.citySearched}
+                                        toggleWelcome={this.toggleWelcome}
+                                      />}
         <CurrentWeather 
-        data={this.state.weatherData} />
+          data={this.state.weatherData} />
         <SevenHour 
-        data={this.state.weatherData} />
+          hourlyForecast={this.state.weatherData.hourly_forecast} />
         <TenDay 
-        data={this.state.weatherData}/> 
-         {/* <Welcome />
-        <Search /> */}
+          forecastDay={this.state.weatherData.forecast.simpleforecast.forecastday}/> 
+        {/* <Search /> */}
       </div>
     );
   }
+
+ let sevenDayData = service.getSevenDayData()
+ 
+ let allData = service.getAllData()
+ let sevenDayData = allData.sevenDay
 
 }
 
