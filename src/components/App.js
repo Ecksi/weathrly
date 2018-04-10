@@ -12,7 +12,9 @@ class App extends Component {
     super();
     this.state = {
       citySearched: null,
-      weatherData: data,
+      sevenHourData: null,
+      tenDayData: null, 
+      currentWeatherData: null,
       showWelcome: true
     };
     
@@ -29,20 +31,24 @@ class App extends Component {
     return (
       <div className="Weathrly">
          { this.state.showWelcome && <Welcome 
-                                      citySearched={this.state.citySearched}
-                                      toggleWelcome={this.toggleWelcome}
+                                        citySearched={this.state.citySearched}
+                                        toggleWelcome={this.toggleWelcome}
                                       />}
-         {/* <Welcome /> */}
         <CurrentWeather 
-        data={this.state.weatherData} />
+          data={this.state.weatherData} />
         <SevenHour 
-        hourlyForecast={this.state.weatherData.hourly_forecast} />
+          hourlyForecast={this.state.weatherData.hourly_forecast} />
         <TenDay 
-        forecastDay={this.state.weatherData.forecast.simpleforecast.forecastday}/> 
+          forecastDay={this.state.weatherData.forecast.simpleforecast.forecastday}/> 
         {/* <Search /> */}
       </div>
     );
   }
+
+ let sevenDayData = service.getSevenDayData()
+ 
+ let allData = service.getAllData()
+ let sevenDayData = allData.sevenDay
 
 }
 
