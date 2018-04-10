@@ -1,0 +1,12 @@
+.ten-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 40%;
+  padding-left: 10px;
+  margin: 20px auto;
+  background-color: hsla(201, 20%, 50%, 1);
+  border-radius: 10px;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
+}

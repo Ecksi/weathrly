@@ -1,10 +1,9 @@
 import React from 'react';
 import Card from './Card';
-import './styles/scss/TenDay.scss';
+import './styles/css/TenDay.css';
 
-const TenDay = ({ data }) => {
-  const { forecastday } = data.forecast.simpleforecast;
-  const sliceForecast = forecastday.slice(0, 9);
+const TenDay = ({forecastDay}) => {
+  const sliceForecast = forecastDay.slice(0, 10);
   const forecastArray = sliceForecast.map( data => {
     return <Card 
       day={data.date.weekday}

@@ -1,13 +1,11 @@
-.Weathrly {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.welcome {
+  position: absolute;
   flex-direction: column;
-  width: 90vw;
-  height: 95vh;
+  width: 100vw;
+  height: 800px;
   padding-left: 10px;
   margin: 20px auto;
-  background-color: hsla(201, 100%, 50%, 1);
+  background-color: hsla(21, 100%, 50%, 1);
   border-radius: 10px;
   box-shadow: 0 14px 45px rgba(0, 0, 0, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
 }
