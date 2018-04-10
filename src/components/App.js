@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import Welcome from './Welcome';
 // import Search from './Search';
 import CurrentWeather from './CurrentWeather';
-// import SevenHour from './SevenHour';
+import SevenHour from './SevenHour';
 // import TenDay from './TenDay';
 import './styles/css/App.css'
 import {data} from '../mockData';
@@ -20,9 +20,10 @@ class App extends Component {
       <div className="Weathrly">
         <CurrentWeather 
         data={this.state.weatherData} />
+        <SevenHour 
+        data={this.state.weatherData} />
         {/* <Welcome />
         <Search />
-        <SevenHour />
         <TenDay /> */}
       </div>
     );

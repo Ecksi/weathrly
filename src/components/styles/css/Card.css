@@ -1,0 +1,15 @@
+h2 {
+  margin: -5px;
+}
+
+.Card {
+  display: inline-block;
+  background-color: #FFF;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+  height: 120px;
+  margin: 10px;
+  width: 120px;
+}
