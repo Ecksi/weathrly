@@ -10,6 +10,7 @@ const SevenHour = ({ data }) => {
       hour={data.FCTTIME.hour}
       image={data.icon_url}
       temp={data.temp.english}
+      call='7-hour'
             />;
     })
 
