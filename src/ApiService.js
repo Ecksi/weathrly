@@ -4,8 +4,9 @@ const getForecasts = ( cityData ) => {
 
   let currentWeatherData = getCurrentWeatherForecast(cityData)
   let sevenHourData = getSevenHourForecast(cityData.hourly_forecast)
-
-  return {currentWeatherData: currentWeatherData, sevenHourData: sevenHourData}
+  let tenDayData = getTenDayForecast(cityData.forecast.simpleforecast.forecastday)
+  
+  return {currentWeatherData: currentWeatherData, sevenHourData: sevenHourData, tenDayData: tenDayData}
 }
 
 const getCurrentWeatherForecast = (data) => {
@@ -40,4 +41,17 @@ const getSevenHourForecast = (hourlyForecast) => {
   return forecastArray
 }
 
-export { getForecasts, getCurrentWeatherForecast, getSevenHourForecast };
+const getTenDayForecast = (tenDayData) => {
+  const sliceForecast = tenDayData.slice(0, 10);
+  const forecastArray = sliceForecast.map( data => {
+    return {
+      day: data.date.weekday,
+      tempHigh: data.high.fahrenheit,
+      tempLow: data.low.fahrenheit,
+      icon: data.icon_url
+    };
+  })
+  return forecastArray
+}
+
+export { getForecasts, getCurrentWeatherForecast, getSevenHourForecast, getTenDayForecast };
