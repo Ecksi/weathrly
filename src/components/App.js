@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import Search from './Search';
 import CurrentWeather from './CurrentWeather';
 import SevenHour from './SevenHour';
-// import TenDay from './TenDay';
+import TenDay from './TenDay';
 import './styles/css/App.css'
 import {data} from '../mockData';
 
@@ -22,9 +22,10 @@ class App extends Component {
         data={this.state.weatherData} />
         <SevenHour 
         data={this.state.weatherData} />
-        {/* <Welcome />
-        <Search />
-        <TenDay /> */}
+        <TenDay 
+        data={this.state.weatherData}/> 
+         {/* <Welcome />
+        <Search /> */}
       </div>
     );
   }
