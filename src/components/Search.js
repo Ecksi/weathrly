@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import './styles/scss/Search.scss';
 import '../locationSanitizer';
-// import Trie from 'auto-complete';
 import locationData from '../cityData';
 import { citySanitizer, stateSanitizer } from '../locationSanitizer';
+const Trie = require('auto-complete');
 
-// const cityTrie = new Trie();
-// const stateTrie =  new Trie();
+const cityTrie = new Trie();
+const stateTrie =  new Trie();
 
-// cityTrie.populate(citySanitizer(locationData.data));
-// stateTrie.populate(stateSanitizer(locationData.data));
+cityTrie.populate(citySanitizer(locationData.data));
+stateTrie.populate(stateSanitizer(locationData.data));
+
 class Search extends Component {
   constructor() {
     super();
