@@ -1,8 +1,7 @@
 .welcome {
-  position: absolute;
+  display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 800px;
   padding-left: 10px;
   margin: 20px auto;
   background-color: hsla(21, 100%, 50%, 1);

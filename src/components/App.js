@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Welcome from './Welcome';  
-// import Search from './Search';
-import CurrentWeather from './CurrentWeather';
-import SevenHour from './SevenHour';
-import TenDay from './TenDay';
+import Search from './Search';
+import WeatherComponent from './WeatherComponent';
+import {getForecasts, getCurrentWeatherForecast, getSevenHourForecast, getTenDayForecast } from '../ApiService';
+// import {data} from '../mockData';
 import './styles/css/App.css'
-import {data} from '../mockData';
 
 class App extends Component {
   constructor() {
@@ -18,37 +17,47 @@ class App extends Component {
       showWelcome: true
     };
     
-    this.toggleWelcome = this.toggleWelcome.bind(this);
+    this.searchApi = this.searchApi.bind(this);
+    this.apiCall = this.apiCall.bind(this);
+  }
+  
+
+  searchApi(event) {
+    this.apiCall()
   }
 
-  toggleWelcome() {
-    this.setState({
-      showWelcome: false
-    })
+  apiCall() {
+    getForecasts('CO', 'Denver')
+      .then(data => {
+        this.setState({ 
+          sevenHourData: getSevenHourForecast(data.hourly_forecast),
+          tenDayData: getTenDayForecast(data.forecast.simpleforecast.forecastday), 
+          currentWeatherData: getCurrentWeatherForecast(data),
+          showWelcome: false
+        })
+      })
   }
-
+  
   render() {
     return (
       <div className="Weathrly">
-         { this.state.showWelcome && <Welcome 
-                                        citySearched={this.state.citySearched}
-                                        toggleWelcome={this.toggleWelcome}
-                                      />}
-        <CurrentWeather 
-          data={this.state.weatherData} />
-        <SevenHour 
-          hourlyForecast={this.state.weatherData.hourly_forecast} />
-        <TenDay 
-          forecastDay={this.state.weatherData.forecast.simpleforecast.forecastday}/> 
-        {/* <Search /> */}
+        { 
+        this.state.showWelcome ? 
+        <Welcome 
+          citySearched={this.state.citySearched}
+          searchApi={this.searchApi}
+        /> :
+        <WeatherComponent 
+          currentWeatherData={this.state.currentWeatherData} 
+          sevenHourData={this.state.sevenHourData}
+          tenDayData={this.state.tenDayData}
+        />
+        }
+        <Search 
+          searchApi={this.searchApi}/>
       </div>
     );
   }
-
- let sevenDayData = service.getSevenDayData()
- 
- let allData = service.getAllData()
- let sevenDayData = allData.sevenDay
 
 }
 
