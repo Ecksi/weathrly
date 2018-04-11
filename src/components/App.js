@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Welcome from './Welcome';  
+import Welcome from './Welcome';
 import Search from './Search';
 import WeatherComponent from './WeatherComponent';
 import {getForecasts, getCurrentWeatherForecast, getSevenHourForecast, getTenDayForecast } from '../ApiService';
@@ -10,24 +10,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      citySearched: null,
       sevenHourData: null,
       tenDayData: null, 
       currentWeatherData: null,
       showWelcome: true
     };
-    
+
     this.searchApi = this.searchApi.bind(this);
     this.apiCall = this.apiCall.bind(this);
   }
-  
 
-  searchApi(event) {
+  searchApi () {
     this.apiCall()
   }
 
-  apiCall() {
-    getForecasts('CO', 'Denver')
+  apiCall({ state, city }) {
+    getForecasts(state, city)
       .then(data => {
         this.setState({ 
           sevenHourData: getSevenHourForecast(data.hourly_forecast),
@@ -53,8 +51,9 @@ class App extends Component {
           tenDayData={this.state.tenDayData}
         />
         }
-        <Search 
-          searchApi={this.searchApi}/>
+        <Search
+          apiCall={this.apiCall}
+          />
       </div>
     );
   }
