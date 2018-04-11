@@ -15,8 +15,10 @@ const Card = ({ hour, condition, image, temp, call, day, tempHigh, tempLow }) =>
       <div className="Card">
         <h2>{day}</h2>
         <img src={image} alt="weather" />
-        <h3>{tempHigh}</h3>
-        <h3>{tempLow}</h3>
+        <div className="ten-day-high-low">
+          <h3>{tempHigh}F</h3>
+          <h3>{tempLow}F</h3>
+        </div>
       </div>
     );
   }

@@ -11,8 +11,10 @@ return (
       <h2>{temp}</h2>
       <h2>{weather}</h2>
       <img src={icon} alt="weather" />
-      <h2>{high}</h2>
-      <h2>{low}</h2>
+      <div className="high-low">
+        <h2>{high}</h2>
+        <h2>{low}</h2>
+      </div>
       <p>{summary}</p>
     </div>
   );
