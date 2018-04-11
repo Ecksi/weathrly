@@ -59,3 +59,5 @@ typings/
 
 # sass local cache files
 .sass-cache
+
+src/private/

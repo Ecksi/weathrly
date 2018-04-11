@@ -1,24 +1,19 @@
 import React from 'react';
 import './styles/css/CurrentWeather.css';
 
-const CurrentWeather = ({ data }) => {
-  const { current_observation, forecast } = data;
-  const { display_location, temp_f, weather, icon_url } = current_observation;
-  const { txt_forecast } = forecast;
-  const date = new Date();
-  const day = date.getDay();
-  const daysArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thurday', 'Friday', 'Saturday'];
+const CurrentWeather = ( {currentWeatherData} ) => {
+const { city, day, temp, weather, icon, high, low, summary } = currentWeatherData
 
-  return (
+return (
     <div className="current-weather">
-      <h1>{display_location.city}</h1>
-      <h1>{daysArray[day]}</h1>
-      <h2>{temp_f}</h2>
+      <h1>{city}</h1>
+      <h1>{day}</h1>
+      <h2>{temp}</h2>
       <h2>{weather}</h2>
-      <img src={icon_url} alt="weather" />
-      <h2>{txt_forecast.forecastday[0].fcttext.split(`. `)[1]}</h2>
-      <h2>{txt_forecast.forecastday[1].fcttext.split(`. `)[1]}</h2>
-      <p>{txt_forecast.forecastday[0].fcttext_metric}</p>
+      <img src={icon} alt="weather" />
+      <h2>{high}</h2>
+      <h2>{low}</h2>
+      <p>{summary}</p>
     </div>
   );
 }

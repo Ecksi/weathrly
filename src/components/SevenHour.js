@@ -2,13 +2,12 @@ import React from 'react';
 import Card from './Card';
 import './styles/css/SevenHour.css';
 
-const SevenHour = ({ hourlyForecast }) => {
-  const sliceForecast = hourlyForecast.slice(0, 7);
-  const forecastArray = sliceForecast.map( data => {
+const SevenHour = ({ sevenHourData }) => {
+  const forecastArray = sevenHourData.map( data => {
     return <Card 
-      hour={data.FCTTIME.hour}
-      image={data.icon_url}
-      temp={data.temp.english}
+      hour={data.hour}
+      image={data.icon}
+      temp={data.temp}
       call='7-hour'
             />;
     })
