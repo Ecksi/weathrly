@@ -9,7 +9,7 @@ const TenDay = ({tenDayData}) => {
       tempHigh={data.tempHigh}
       tempLow={data.tempLow}
       image={data.icon}
-            />;
+      />;
   })
 
   return (
