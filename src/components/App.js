@@ -36,23 +36,17 @@ class App extends Component {
   }
   
   render() {
+    const showWeather = <WeatherComponent 
+                          currentWeatherData={this.state.currentWeatherData} 
+                          sevenHourData={this.state.sevenHourData}
+                          tenDayData={this.state.tenDayData}
+                        />
+
     return (
-      <div className="Weathrly">
-        { 
-        this.state.showWelcome ? 
-        <Welcome 
-          citySearched={this.state.citySearched}
-          searchApi={this.searchApi}
-        /> :
-        <WeatherComponent 
-          currentWeatherData={this.state.currentWeatherData} 
-          sevenHourData={this.state.sevenHourData}
-          tenDayData={this.state.tenDayData}
-        />
-        }
+      <div className="Weathrly"> 
+        {this.state.showWelcome ? <Welcome /> : [showWeather]}
         <Search
-          apiCall={this.apiCall}
-          />
+          apiCall={this.apiCall} />
       </div>
     );
   }

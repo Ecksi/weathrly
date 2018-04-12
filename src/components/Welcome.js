@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from './Search';
 import './styles/css/Welcome.css';
 
 const Welcome = (props) => {
