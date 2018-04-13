@@ -15,13 +15,9 @@ class App extends Component {
       showWelcome: true
     };
 
-    this.searchApi = this.searchApi.bind(this);
     this.apiCall = this.apiCall.bind(this);
   }
 
-  searchApi () {
-    this.apiCall()
-  }
 
   apiCall({ state, city }) {
     getForecasts(state, city)
