@@ -2,6 +2,7 @@ import React from 'react'
 import CurrentWeather from './CurrentWeather';
 import SevenHour from './SevenHour';
 import TenDay from './TenDay';
+import './styles/css/WeatherComponent.css'
 
 const WeatherComponent = (props) => {
   return (
