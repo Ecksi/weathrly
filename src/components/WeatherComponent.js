@@ -32,11 +32,13 @@ class WeatherComponent extends Component {
     /> 
 
     return (
-      <div>
-        <input type="submit" onClick={this.toggleWeather} className="weather-toggle" /> 
-        <CurrentWeather 
-            currentWeatherData={this.props.currentWeatherData} />
-        {this.state.showWeather ? sevenHour : tenDay }
+      <div className="all-weather">
+      <CurrentWeather 
+      currentWeatherData={this.props.currentWeatherData} />
+      {this.state.showWeather ? 
+      <input type="submit" onClick={this.toggleWeather} className="weather-toggle" value="Ten Day" /> :
+      <input type="submit" onClick={this.toggleWeather} className="weather-toggle" value="Seven Hour" /> }
+      {this.state.showWeather ? sevenHour : tenDay }
       </div>
     )
   } 
