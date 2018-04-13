@@ -1,11 +1,49 @@
 .currentWeather {
+  width: 50%;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color: white;
+  opacity: .5;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  
 }
 
 img {
   width: 50px;
   height: 50px;
   margin: auto;
+}
+
+.current-city {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.current-day {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.current-temp {
+  margin: 0;
+  font-size: 4rem;
+
+}
+
+.current-weather {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.current-spread {
+  margin: 0;
+  font-size: .8rem;
+}
+
+.current-summary {
+  font-size: 1rem;
 }
