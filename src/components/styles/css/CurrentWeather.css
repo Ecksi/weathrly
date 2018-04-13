@@ -1,16 +1,16 @@
 .currentWeather {
   width: 100vw;
-  margin-top: 50px;
+  margin-top: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 150px 50px 200px;
+  grid-template-rows: 80px 150px 10px 200px;
   grid-template-areas: 
                       "a c g"
-                      "a d g"
-                      "b e g"
-                      "i f h";
+                      "a d h"
+                      "b e j"
+                      "i f k";
   color: #c4cfcf;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
+  /* box-shadow: 0 14px 45px rgba(0, 0, 0, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22); */
   border-radius: 10px;
   font-family: 'Ubuntu', sans-serif;
   
@@ -29,8 +29,10 @@ img {
   display: flex;
   justify-content: center;
   grid-area: d;
-  margin: 0;
-  font-size: 4rem;
+  margin: 0;	
+  line-height: 0;
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+  font-size: 5rem;
 }
 
 .current-day {
@@ -41,24 +43,34 @@ img {
   font-size: 2rem;
 }
 
+.current-outside {
+  grid-area: a;
+}
+
 .current-temp {
   display: flex;
-  justify-content: center;
-  grid-area: 1;
-  margin: 0;
-  font-size: 4rem;
-  text-shadow: 2px 2px 4px #000000;
+  /* justify-content: left; */
+  /* grid-area: a; */
+  margin-left: 10%;
+  font-size: 5rem;
+  line-height: .5;
+  /* text-shadow: 2px 2px 4px #000000;  */
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+
 }
 
 .current-weather {
+  /* grid-area: b; */
+  margin-left: 10%;  
   display: flex;
-  justify-content: center;
-  margin: 0;
-  font-size: 1rem;
+  /* justify-content: left; */
+  /* margin: 0; */
+  line-height: 0;
+  font-size: 2rem;
 }
 
 .current-spread {
-  grid-area: g;
+  grid-area: h;
   margin: 0;
   font-size: .8rem;
 }

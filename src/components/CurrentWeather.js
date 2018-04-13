@@ -8,8 +8,10 @@ return (
     <div className="currentWeather">
       <h1 className="current-day" >{day}</h1>
       <h1 className="current-city" >{city}</h1>
-      <h2 className="current-temp" >{temp}</h2>
-      <h2 className="current-weather" >{weather}</h2>
+      <div  className="current-outside">
+        <h2 className="current-temp" >{temp} &#176;</h2>
+        <h2 className="current-weather" >{weather}</h2>
+      </div>
       <img src={icon} alt="weather" />
       <div className="current-spread" >
         <h2>{high}</h2>
