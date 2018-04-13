@@ -1,5 +1,4 @@
 .Weathrly {
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,4 +9,14 @@
   margin: auto; 
   background-color: hsla(201, 100%, 50%, 1);
   box-shadow: 0 14px 45px rgba(248, 165, 165, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+.weather-toggle {
+  top: 200px;
+  left: 200px;
+  position: fixed;
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  z-index: 100;
 }
