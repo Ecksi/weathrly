@@ -1,16 +1,20 @@
-h2 {
+.cardHeader {
+  padding-top: 5px;
   margin: -5px;
-  font-size: 1.5rem;
+  font-size: 18px;
+}
+
+.cardText {
+  text-align: center;
 }
 
 .Card {
-  display: inline-block;
+  text-align: center;
   margin: 10px;
   height: 120px;
   margin: 10px;
   width: 120px;
   background-color: #FFF;
-  background-repeat: no-repeat;
   border-radius: 5px;
   border: none;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
@@ -19,4 +23,8 @@ h2 {
 
 .Card:hover {
   transform: scale(1.5);
+}
+
+img {
+  padding-top: 10px;
 }
