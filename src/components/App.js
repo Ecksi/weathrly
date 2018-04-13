@@ -18,7 +18,6 @@ class App extends Component {
     this.apiCall = this.apiCall.bind(this);
   }
 
-
   apiCall({ state, city }) {
     getForecasts(state, city)
       .then(data => {
@@ -32,21 +31,20 @@ class App extends Component {
   }
   
   render() {
-    const showWeather = <WeatherComponent 
-                          currentWeatherData={this.state.currentWeatherData} 
-                          sevenHourData={this.state.sevenHourData}
-                          tenDayData={this.state.tenDayData}
-                        />
+    const showWeather = 
+      <WeatherComponent 
+        currentWeatherData={this.state.currentWeatherData} 
+        sevenHourData={this.state.sevenHourData}
+        tenDayData={this.state.tenDayData}
+      />
 
     return (
       <div className="Weathrly"> 
-      {this.state.showWelcome ? <Welcome /> : [showWeather]}
-      <Search
-          apiCall={this.apiCall} />
+        {this.state.showWelcome ? <Welcome /> : [showWeather]}
+        <Search apiCall={this.apiCall} />
       </div>
     );
   }
-
 }
 
 export default App;
