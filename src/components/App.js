@@ -44,8 +44,8 @@ class App extends Component {
 
     return (
       <div className="Weathrly"> 
-        {this.state.showWelcome ? <Welcome /> : [showWeather]}
-        <Search
+      {this.state.showWelcome ? <Welcome /> : [showWeather]}
+      <Search
           apiCall={this.apiCall} />
       </div>
     );
