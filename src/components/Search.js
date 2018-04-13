@@ -19,13 +19,13 @@ class Search extends Component {
       city: '',
       state: ''
     }
-    
+
     this.updateLocation = this.updateLocation.bind(this);
   }
 
   updateLocation(event) {
     const { name, value } = event.target;
-    
+
     name === 'city' ? 
     cityTrie.suggest(value) :
     stateTrie.suggest(value);

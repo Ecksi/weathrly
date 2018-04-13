@@ -1,23 +1,25 @@
 form {
   display: flex;
+  align-items: flex-start;
 }
 
 input {
   font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: #555860;
-  margin-right: 50px;
 }
 
 .search {
-  position: relative;
+  position: absolute;
   margin: 0 auto;
+  top: 20px;
+  right: 5px;
   width: 600px;
   border: bottom;
 }
 
 .search input {
-  height: 80px;
+  height: 40px;
   width: 100%;
   padding: 0 12px 0 25px;
   background: transparent;
