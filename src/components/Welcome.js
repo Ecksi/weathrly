@@ -4,7 +4,7 @@ import './styles/css/Welcome.css';
 const Welcome = (props) => {
   return (
     <div className="welcome">
-      <h1>Welcome!</h1>
+      <h1 className="welcome-header">Weathrly</h1>
     </div>
   );
 }
