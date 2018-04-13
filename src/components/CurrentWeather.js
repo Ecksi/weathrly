@@ -5,7 +5,7 @@ const CurrentWeather = ( {currentWeatherData} ) => {
 const { city, day, temp, weather, icon, high, low, summary } = currentWeatherData
 
 return (
-    <div className="current-weather">
+    <div className="currentWeather">
       <h1>{city}</h1>
       <h1>{day}</h1>
       <h2>{temp}</h2>

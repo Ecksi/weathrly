@@ -5,11 +5,11 @@ import './styles/css/SevenHour.css';
 const SevenHour = ({ sevenHourData }) => {
   const forecastArray = sevenHourData.map( data => {
     return <Card 
-      hour={data.hour}
+      hour={data.hour + ':00 PM'}
       image={data.icon}
-      temp={data.temp}
+      temp={data.temp + 'F'}
       call='7-hour'
-            />;
+      />;
     })
 
   return (
