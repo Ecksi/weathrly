@@ -2,17 +2,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   height: 200px;
-  width: 250px;
+  width: 350px;
   background-color: #FFF;
   border: none;
   transition: 0.75s
 }
 
 .cardHeader {
+  color: rgba(74, 77, 78, 0.845);
   padding-top: 5px;
   font-size: 18px;
+}
+
+.hourly-temp {
+  color: rgba(74, 77, 78, 0.845);
 }
 
 .Card:hover {
