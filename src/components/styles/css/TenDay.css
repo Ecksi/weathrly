@@ -1,9 +1,7 @@
 .ten-day {
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 40%;
+  width: 100vw;
   border-radius: 10px;
 }
 
