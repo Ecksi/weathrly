@@ -41,7 +41,7 @@ class Search extends Component {
     })
     const stateSuggestions = stateTrie.sortedSuggestions.map( state => {
       return (
-        <li>{state}</li>
+        <li >{state}</li>
       )
     })
 
@@ -52,17 +52,17 @@ class Search extends Component {
             event.preventDefault();
               this.props.apiCall(this.state)}}>
             <input onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" />
-              <ul className="results">{citySuggestions}</ul>
+              <ul className="results city">{citySuggestions}</ul>
             <input onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" />
-              <ul className="results">{stateSuggestions}</ul>
+              <ul className="results state">{stateSuggestions}</ul>
             <input type="submit"/>
           </form>
         </div> 
         :
         <div className="search">
-          <form action="" onSubmit={(event) => {
-            event.preventDefault();
-            this.props.apiCall(this.state)}}>
+          <form onSubmit={(event) => {
+              event.preventDefault();
+              this.props.apiCall(this.state)}}>
             <input onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" />
             <ul className="results">{citySuggestions}</ul>
             <input onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" />
