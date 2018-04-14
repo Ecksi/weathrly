@@ -14,10 +14,24 @@ class App extends Component {
       currentWeatherData: null,
       showWelcome: true
     };
-
+    
     this.apiCall = this.apiCall.bind(this);
   }
-
+  
+  componentDidMount() {
+    let localWeather = localStorage.getItem('weather');
+    let parsedWeather = JSON.parse(localWeather);
+    
+    if(parsedWeather) {
+      this.setState({
+        sevenHourData: parsedWeather.sevenHourData,
+        tenDayData: parsedWeather.tenDayData, 
+        currentWeatherData: parsedWeather.currentWeatherData,
+        showWelcome: parsedWeather.showWeather
+      })
+    }
+  }
+  
   apiCall({ state, city }) {
     getForecasts(state, city)
       .then(data => {
@@ -27,6 +41,7 @@ class App extends Component {
           currentWeatherData: getCurrentWeatherForecast(data),
           showWelcome: false
         })
+        localStorage.setItem('weather', JSON.stringify(this.state))       
       })
   }
   
