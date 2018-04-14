@@ -45,18 +45,31 @@ class Search extends Component {
       )
     })
 
-    return(
-      <div className="search">
-        <form action="" onSubmit={(event) => {
-          event.preventDefault();
+    return (
+      this.props.welcome.showWelcome ? 
+        <div className="search welcomeSearch">
+          <form action="" onSubmit={(event) => {
+            event.preventDefault();
+              this.props.apiCall(this.state)}}>
+            <input onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" />
+              <ul className="results">{citySuggestions}</ul>
+            <input onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" />
+              <ul className="results">{stateSuggestions}</ul>
+            <input type="submit"/>
+          </form>
+        </div> 
+        :
+        <div className="search">
+          <form action="" onSubmit={(event) => {
+            event.preventDefault();
             this.props.apiCall(this.state)}}>
-          <input onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" />
+            <input onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" />
             <ul className="results">{citySuggestions}</ul>
-          <input onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" />
+            <input onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" />
             <ul className="results">{stateSuggestions}</ul>
-          <input type="submit" className="submit-button" />
-        </form>
-      </div>
+            <input type="submit" className="submit-button" />
+          </form>
+        </div>
     )
   }
 }
