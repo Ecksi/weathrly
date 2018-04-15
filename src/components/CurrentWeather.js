@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/css/CurrentWeather.css';
+import changeWeatherImage from '../imageChanger.js';
 
 const CurrentWeather = ( {currentWeatherData} ) => {
 const { city, day, temp, weather, icon, high, low, summary } = currentWeatherData
@@ -12,7 +13,7 @@ return (
         <h2 className="current-temp" >{temp} &#176;</h2>
         <h2 className="current-weather" >{weather}</h2>
       </div>
-      <img src={icon} alt="weather" />
+    <img src={changeWeatherImage(icon)} alt="weather" />
       <div className="current-spread" >
         <h2>{high}</h2>
         <h2>{low}</h2>
