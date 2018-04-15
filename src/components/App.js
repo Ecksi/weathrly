@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Welcome from './Welcome';
 import Search from './Search';
 import WeatherComponent from './WeatherComponent';
-import {getForecasts, getCurrentWeatherForecast, getSevenHourForecast, getTenDayForecast } from '../ApiService';
-import './styles/css/App.css'
+import {getCurrentWeatherForecast, getSevenHourForecast, getTenDayForecast } from '../ApiService';
+import getForecasts from '../apiCall';
+import './styles/css/App.css';
 
 class App extends Component {
   constructor() {

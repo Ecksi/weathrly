@@ -5,15 +5,11 @@ import {getForecasts, getCurrentWeatherForecast, getSevenHourForecast, getTenDay
 describe('Api Service', () => {
 
   describe('getForecasts', () => {
-    
-    it('Should return an object', () => {
-      expect(typeof getForecasts(data)).toBe('object');
-    })
 
     it('Should return key of current weather with appropriate value', () => {
       let expectedValue = {
         city: 'Louisville', 
-        day: 'Tuesday', 
+        day: 'Sunday', 
         temp: 46, 
         weather: 'Mostly Cloudy', 
         icon: 'http://icons.wxug.com/i/c/k/mostlycloudy.gif', 
