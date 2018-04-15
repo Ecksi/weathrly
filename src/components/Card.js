@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/css/Card.css';
+import changeWeatherImage from '../imageChanger.js';
 
 const Card = ({ hour, condition, image, temp, call, day, tempHigh, tempLow }) => {
   if (hour === '12') {
@@ -16,7 +17,7 @@ const Card = ({ hour, condition, image, temp, call, day, tempHigh, tempLow }) =>
     return (
       <div className="Card">
         <h2 className="cardHeader">{hour}</h2>
-        <img src={image} alt="weather" />
+        <img src={changeWeatherImage(image)} alt="weather" />
         <h3 className="hourly-temp">{temp}&#176;</h3>
       </div>
     );
@@ -24,7 +25,7 @@ const Card = ({ hour, condition, image, temp, call, day, tempHigh, tempLow }) =>
     return (
       <div className="Card">
         <h2 className="cardText cardHeader">{day}</h2>
-        <img src={image} alt="weather" />
+        <img src={changeWeatherImage(image)} alt="weather" />
         <div className="ten-day-high-low">
           <h3 className="cardText cardHigh">{tempHigh}&#176;</h3>
           <h3 className="cardText cardLow">{tempLow}&#176;</h3>
