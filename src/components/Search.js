@@ -35,50 +35,42 @@ class Search extends Component {
   }
 
   selectLocation(event) {
-    const { name, value } = event.target;
-
-    name === 'city' ?
-    cityTrie.select(value) :
-    stateTrie.select(value);
+    // const { name } = event.target;
+    // name === 'city' ?
+    // cityTrie.select(value) :
+    // stateTrie.select(value);
   }
 
   render() {
     const citySuggestions = cityTrie.sortedSuggestions.map( (city, index) => {
       return (
-        <li key={city} onClick={this.selectLocation}>{city}</li>
+        <option key={city} onClick={this.selectLocation} >{city}</option>
       )
     })
     const stateSuggestions = stateTrie.sortedSuggestions.map( state => {
       return (
-        <li key={state} onClick={this.selectLocation}>{state}</li>
+        <option key={state} onClick={this.selectLocation} >{state}</option>
       )
     })
+    const userInputs = 
+      <form onSubmit={(event) => {
+          event.preventDefault();
+          this.props.apiCall(this.state)}}>
+        <input list="cities-list" onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" />
+        <datalist id="cities-list" className="results">{citySuggestions}</datalist>
+        <input list="states-list" onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" maxLength='2' />
+        <datalist id="states-list" className="results">{stateSuggestions}</datalist>
+        <input type="submit" className="submit-button" />
+      </form>
 
     return (
       this.props.welcome.showWelcome ?
         <div className="search welcomeSearch">
-          <form action="" onSubmit={(event) => {
-            event.preventDefault();
-            this.selectLocation;
-            this.props.apiCall(this.state)}}>
-            <input onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" autoComplete="off" />
-              <ul className="results city">{citySuggestions}</ul>
-            <input onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" autoComplete="off" maxLength='2' />
-              <ul className="results state">{stateSuggestions}</ul>
-            <input type="submit"/>
-          </form>
+          {userInputs}
         </div> 
         :
         <div className="search">
-          <form onSubmit={(event) => {
-              event.preventDefault();
-              this.props.apiCall(this.state)}}>
-            <input onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" />
-            <ul className="results">{citySuggestions}</ul>
-            <input onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" maxLength='2' />
-            <ul className="results">{stateSuggestions}</ul>
-            <input type="submit" className="submit-button" />
-          </form>
+          {userInputs}
         </div>
     )
   }
