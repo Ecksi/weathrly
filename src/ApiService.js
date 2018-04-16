@@ -1,3 +1,4 @@
+import changeWeatherImage from './imageChanger';
 
 const getCurrentWeatherForecast = (data) => {
   const { current_observation, forecast } = data; //make all this inline
@@ -22,9 +23,19 @@ const getCurrentWeatherForecast = (data) => {
 const getSevenHourForecast = (hourlyForecast) => {
   const sliceForecast = hourlyForecast.slice(0, 7);
   const forecastArray = sliceForecast.map( data => {
+    if (data.FCTTIME.hour === '12') {
+      data.FCTTIME.hour = `${data.FCTTIME.hour}:00 PM`;
+    } else if (data.FCTTIME.hour > 11) {
+      data.FCTTIME.hour = `${data.FCTTIME.hour - 12}:00 PM`;
+    } else if (data.FCTTIME.hour === '0') {
+      data.FCTTIME.hour = `12:${data.FCTTIME.hour}0 AM`;
+    } else {
+      data.FCTTIME.hour = `${data.FCTTIME.hour}:00 AM`;
+    }
+
     return {
       hour: data.FCTTIME.hour,
-      icon: data.icon_url,
+      icon: changeWeatherImage(data.icon_url),
       temp: data.temp.english
     }
   })
@@ -38,7 +49,7 @@ const getTenDayForecast = (tenDayData) => {
       day: data.date.weekday,
       tempHigh: data.high.fahrenheit,
       tempLow: data.low.fahrenheit,
-      icon: data.icon_url
+      icon: changeWeatherImage(data.icon_url)
     };
   })
   return forecastArray
