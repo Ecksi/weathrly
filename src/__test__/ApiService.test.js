@@ -24,38 +24,38 @@ describe('Api Service', () => {
     it('Should return key of 7 hour weather with appropriate value', () => {
       let expectedValue = [
         {
-        hour: '12',
-        icon: 'http://icons.wxug.com/i/c/k/partlycloudy.gif',
+        hour: '12:00 PM',
+        icon: '/images/cloudy-day-1.svg',
         temp: '47'
         }, 
         {
-        hour: '13',
-        icon: 'http://icons.wxug.com/i/c/k/partlycloudy.gif',
+        hour: '1:00 PM',
+        icon: '/images/cloudy-day-1.svg',
         temp: '49'
         },
         {
-        hour: '14',
-        icon: 'http://icons.wxug.com/i/c/k/partlycloudy.gif',
+        hour: '2:00 PM',
+        icon: '/images/cloudy-day-1.svg',
         temp: '49'
         }, 
         {
-        hour: '15',
-        icon: 'http://icons.wxug.com/i/c/k/clear.gif',
+        hour: '3:00 PM',
+        icon: '/images/day.svg',
         temp: '51'
         }, 
         {
-        hour: '16',
-        icon: 'http://icons.wxug.com/i/c/k/clear.gif',
+        hour: '4:00 PM',
+        icon: '/images/day.svg',
         temp: '50'
         }, 
         {
-        hour: '17',
-        icon: 'http://icons.wxug.com/i/c/k/clear.gif',
+        hour: '5:00 PM',
+        icon: '/images/day.svg',
         temp: '48'
         }, 
         {
-        hour: '18',
-        icon: 'http://icons.wxug.com/i/c/k/nt_clear.gif',
+        hour: '6:00 PM',
+        icon: '/images/night.svg',
         temp: '45'
         }
       ]
@@ -69,61 +69,61 @@ describe('Api Service', () => {
         day: 'Wednesday', 
         tempHigh: '51',
         tempLow: '32', 
-        icon: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+        icon: '/images/cloudy-day-1.svg'
         },
         {
         day: 'Thursday', 
         tempHigh: '55',
         tempLow: '51', 
-        icon: 'http://icons.wxug.com/i/c/k/clear.gif'
+        icon: '/images/day.svg'
         },
         {
         day: 'Friday', 
         tempHigh: '57',
         tempLow: '44', 
-        icon: 'http://icons.wxug.com/i/c/k/chancerain.gif'
+          icon: './images/rainy-4.svg'
         },
         {
         day: 'Saturday', 
         tempHigh: '47',
         tempLow: '30', 
-        icon: 'http://icons.wxug.com/i/c/k/rain.gif'
+        icon: '/images/rainy-6.svg'
         },
         {
         day: 'Sunday', 
         tempHigh: '37',
         tempLow: '22', 
-        icon: 'http://icons.wxug.com/i/c/k/cloudy.gif'
+        icon: '/images/cloudy.svg'
         },
         {
         day: 'Monday', 
         tempHigh: '35',
         tempLow: '19', 
-        icon: 'http://icons.wxug.com/i/c/k/clear.gif'
+        icon: '/images/day.svg'
         },
         {
         day: 'Tuesday', 
         tempHigh: '32',
         tempLow: '20', 
-        icon: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+        icon: '/images/cloudy-day-1.svg'
         },
         {
         day: 'Wednesday', 
         tempHigh: '33',
         tempLow: '26', 
-        icon: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+        icon: '/images/cloudy-day-1.svg'
         },
         {
         day: 'Thursday', 
         tempHigh: '35',
         tempLow: '23', 
-        icon: 'http://icons.wxug.com/i/c/k/snow.gif'
+        icon: '/images/snowy-6.svg'
         }, 
         {
         day: 'Friday', 
         tempHigh: '31',
         tempLow: '18', 
-        icon: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+        icon: '/images/cloudy-day-1.svg'
         }
       ]
 

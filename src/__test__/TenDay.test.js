@@ -10,15 +10,16 @@ describe('Ten Day', () => {
       day: 'smushday',
       tempHigh: '420',
       tempLow: '10',
-      image: 'cloud-picture'
+      icon: 'http://icons.wxug.com/i/c/k/mostlycloudy.gif'
     }]
 
     let wrapper = shallow(<TenDay props={expectedValues} />)
+    console.log(wrapper.find(Card).props())
 
     expect(wrapper.find(Card).props().day).toEqual('smushday')
     expect(wrapper.find(Card).props().tempHigh).toEqual('420')
     expect(wrapper.find(Card).props().tempLow).toEqual('10')
-    expect(wrapper.find(Card).props().image).toEqual('cloud-picture')
+    expect(wrapper.find(Card).props().image).toEqual('http://icons.wxug.com/i/c/k/mostlycloudy.gif')
   });
 
   it('should create an array of cards equal to the length of cards given', () => {
