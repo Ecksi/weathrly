@@ -7,11 +7,8 @@ import '../setupTests';
 describe('Seven Hour', () => {
   it('should populate a card with the correct props', () => {
     const expectedValues = [{
-      Card.changeWeatherImage = (image) => {
-        return "hi"
-      }
       hour: '12',
-      image: 'http://icons.wxug.com/i/c/k/partlycloudy.gif',
+      icon: 'http://icons.wxug.com/i/c/k/partlycloudy.gif',
       temp: '500',
       call: '7-hour'
     }]
@@ -19,9 +16,8 @@ describe('Seven Hour', () => {
     const wrapper = shallow(<SevenHour props={expectedValues} />)
     const propValue = wrapper.find(Card).props()
 
-console.log(wrapper.find(Card).props())
     expect(propValue.hour).toEqual('12')
-    expect(propValue.image).toEqual('/images/cloudy-day-1.svg')
+    expect(propValue.image).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif')
     expect(propValue.temp).toEqual('500')
     expect(propValue.call).toEqual('7-hour')
   });

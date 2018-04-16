@@ -13,10 +13,10 @@ const CurrentWeather = ({ props }) => {
         <h2 className="current-temp" >{temp} &#176;</h2>
         <h2 className="current-weather" >{weather}</h2>
       </div>
-      <img src={changeWeatherImage(icon)} alt="weather" />
-      <div className="current-spread" >
-        <h2>{high}</h2>
-        <h2>{low}</h2>
+      <img className="current-icon" src={changeWeatherImage(icon)} alt="weather" />
+      <div className="current-spread">
+        <h2 className="current-high">{high}</h2>
+        <h2 className="current-low">{low}</h2>
       </div>
       <p className="current-summary" >{summary}</p>
     </div>
