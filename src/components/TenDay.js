@@ -2,14 +2,14 @@ import React from 'react';
 import Card from './Card';
 import './styles/css/TenDay.css';
 
-const TenDay = ({tenDayData}) => {
-  const forecastArray = tenDayData.map( data => {
-    return <Card 
+const TenDay = ({ props }) => {
+  const forecastArray = props.map(data => {
+    return <Card
       day={data.day}
       tempHigh={data.tempHigh}
       tempLow={data.tempLow}
       image={data.icon}
-      />;
+    />;
   })
 
   return (
