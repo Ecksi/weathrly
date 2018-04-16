@@ -21,6 +21,7 @@ class Search extends Component {
     }
 
     this.updateLocation = this.updateLocation.bind(this);
+    // this.selectLocation = this.selectLocation.bind(this);
   }
 
   updateLocation(event) {
@@ -33,17 +34,24 @@ class Search extends Component {
     this.setState({[name]: value});
   }
 
+  // selectLocation(event) {
+  //   const { name, value } = event.target
+  //   console.log(value)
+  //   debugger
+  // }
+
   render() {
-    const citySuggestions = cityTrie.sortedSuggestions.map( city => {
+    const citySuggestions = cityTrie.sortedSuggestions.map( (city, index) => {
       return (
-        <li>{city}</li>
+        <li key={city} >{city}</li>
       )
     })
     const stateSuggestions = stateTrie.sortedSuggestions.map( state => {
       return (
-        <li >{state}</li>
+        <li key={state}>{state}</li>
       )
     })
+
 
     return (
       this.props.welcome.showWelcome ? 
@@ -51,9 +59,9 @@ class Search extends Component {
           <form action="" onSubmit={(event) => {
             event.preventDefault();
               this.props.apiCall(this.state)}}>
-            <input onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" />
+            <input onChange={this.updateLocation} type="text" name="city" value={this.state.city} className="location-input" placeholder="city" autoComplete="off" />
               <ul className="results city">{citySuggestions}</ul>
-            <input onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" />
+            <input onChange={this.updateLocation} type="text" name="state" value={this.state.state} className="location-input" placeholder="state" autoComplete="off" />
               <ul className="results state">{stateSuggestions}</ul>
             <input type="submit"/>
           </form>

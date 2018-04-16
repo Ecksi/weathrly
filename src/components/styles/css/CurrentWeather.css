@@ -19,9 +19,8 @@
 img {
   display: flex;
   justify-content: center;
-  grid-area: f;
+  grid-area: d;
   width: 75px;
-  height: 75px;
   /* margin: auto; */
 }
 
@@ -71,13 +70,14 @@ img {
 
 .current-spread {
   grid-area: h;
-  margin: 0;
+  margin-top: 20px;
   font-size: .8rem;
 }
 
 .current-summary {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
   grid-area: g;
   font-size: 1rem;
 }

@@ -23,6 +23,9 @@ const changeWeatherImage = (image) => {
   } else if (image === 'http://icons.wxug.com/i/c/k/nt_chancesnow.gif' ||
     image === 'http://icons.wxug.com/i/c/k/chancesnow.gif') {
     image = '/images/snowy-4.svg';
+  } else if (image === 'http://icons.wxug.com/i/c/k/tstorms.gif' ||
+    image === 'http://icons.wxug.com/i/c/k/chancetstorms.gif') {
+    image = '/images/thunder.svg';
   }
   return image;
 }

@@ -41,7 +41,7 @@ input[type=submit] {
   border-color: transparent;
 }
 
-.search input:focus + .results { 
+.search input + .results { 
   display: block 
 }
 
@@ -93,9 +93,13 @@ input[type=submit] {
   top: -10px;
 }
 
-.search .results li:first-child:hover:before, .search .results li:first-child:hover:after { display: none }
+/* .search .results li:first-child:hover:before, .search .results li:first-child:hover:after { 
+  display: none 
+} */
 
-.search .results li:last-child { margin-bottom: -1px }
+.search .results li:last-child { 
+  margin-bottom: -1px 
+}
 
 .location-input {
   font-size: 2rem;

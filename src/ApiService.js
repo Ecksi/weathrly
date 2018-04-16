@@ -1,14 +1,3 @@
-import apikey from './private/apikey';
-
-const getForecasts = ( state, cityName ) => {
-  const proxyurl = 'https://cors-anywhere.herokuapp.com/'
-  const url = 'https://api.wunderground.com/api/'
-  const city = `/conditions/geolookup/hourly/forecast10day/q/${state}/${cityName}.json`;
-
-  return fetch(proxyurl + url + apikey + city)
-    .then(res => res.json())
-    .catch(err => console.log(err));
-}
 
 const getCurrentWeatherForecast = (data) => {
   const { current_observation, forecast } = data; //make all this inline
@@ -55,4 +44,4 @@ const getTenDayForecast = (tenDayData) => {
   return forecastArray
 }
 
-export { getForecasts, getCurrentWeatherForecast, getSevenHourForecast, getTenDayForecast };
+export { getCurrentWeatherForecast, getSevenHourForecast, getTenDayForecast };
