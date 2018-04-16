@@ -14,7 +14,6 @@ describe('Ten Day', () => {
     }]
 
     let wrapper = shallow(<TenDay props={expectedValues} />)
-    console.log(wrapper.find(Card).props())
 
     expect(wrapper.find(Card).props().day).toEqual('smushday')
     expect(wrapper.find(Card).props().tempHigh).toEqual('420')

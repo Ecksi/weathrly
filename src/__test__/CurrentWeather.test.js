@@ -1,6 +1,6 @@
 import React from 'react';
 import CurrentWeather from '../components/CurrentWeather';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import '../setupTests';
 
 describe('Current Weather Component', () => {
@@ -10,10 +10,10 @@ describe('Current Weather Component', () => {
       city: 'the island from castaway',
       day: 'testday',
       temp: 'some body',
-      weather: 90,
+      weather: "90",
       icon: 'img',
-      high: 1005,
-      low: 5,
+      high: "1005",
+      low: "5",
       summary: 'spaceweather'
     };
 
@@ -21,6 +21,10 @@ describe('Current Weather Component', () => {
 
     expect(wrapper.find('.current-day').text()).toEqual('testday');
     expect(wrapper.find('.current-city').text()).toEqual('the island from castaway');
+    expect(wrapper.find('.current-temp').text()).toEqual('some body °');
+    expect(wrapper.find('.current-weather').text()).toEqual("90");
+    expect(wrapper.find('.current-high').text()).toEqual("1005");
+    expect(wrapper.find('.current-low').text()).toEqual("5");
   })
 
 })
