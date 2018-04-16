@@ -9,7 +9,7 @@ describe('Api Service', () => {
     it('Should return key of current weather with appropriate value', () => {
       let expectedValue = {
         city: 'Louisville', 
-        day: 'Sunday', 
+        day: 'Monday', 
         temp: 46, 
         weather: 'Mostly Cloudy', 
         icon: 'http://icons.wxug.com/i/c/k/mostlycloudy.gif', 
@@ -124,7 +124,7 @@ describe('Api Service', () => {
         tempHigh: '31',
         tempLow: '18', 
         icon: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
-        }             
+        }
       ]
 
       expect(getTenDayForecast(data.forecast.simpleforecast.forecastday)).toEqual(expectedValue)
