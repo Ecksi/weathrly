@@ -21,7 +21,6 @@ class Search extends Component {
     }
 
     this.updateLocation = this.updateLocation.bind(this);
-    this.selectLocation = this.selectLocation.bind(this);
   }
 
   updateLocation(event) {
@@ -34,22 +33,15 @@ class Search extends Component {
     this.setState({[name]: value});
   }
 
-  selectLocation(event) {
-    // const { name } = event.target;
-    // name === 'city' ?
-    // cityTrie.select(value) :
-    // stateTrie.select(value);
-  }
-
   render() {
     const citySuggestions = cityTrie.sortedSuggestions.map( (city, index) => {
       return (
-        <option key={city} onClick={this.selectLocation} >{city}</option>
+        <option key={city}>{city}</option>
       )
     })
     const stateSuggestions = stateTrie.sortedSuggestions.map( state => {
       return (
-        <option key={state} onClick={this.selectLocation} >{state}</option>
+        <option key={state}>{state}</option>
       )
     })
     const userInputs = 
