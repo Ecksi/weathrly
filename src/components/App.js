@@ -47,7 +47,8 @@ class App extends Component {
           sevenHourData: getSevenHourForecast(data.hourly_forecast),
           tenDayData: getTenDayForecast(data.forecast.simpleforecast.forecastday),
           currentWeatherData: getCurrentWeatherForecast(data),
-          showWelcome: false
+          showWelcome: false,
+          error: false
         })
         localStorage.setItem('weather', JSON.stringify(this.state))
         }
@@ -61,12 +62,20 @@ class App extends Component {
         sevenHourData={this.state.sevenHourData}
         tenDayData={this.state.tenDayData}
       />
-    const noError = 
-      this.state.showWelcome ? <Welcome /> : showWeather
+
+    const displayStateorSomething = () => {
+      if (this.state.error) {
+       return <ErrorPage />
+      } else if (this.state.showWelcome) {
+        return <Welcome />
+      } else {
+        return showWeather
+      }
+    }
 
     return (
       <div className="Weathrly">
-        {this.state.error ? <ErrorPage /> : noError}
+        {displayStateorSomething()}
         <Search apiCall={this.apiCall} welcome={this.state} />
       </div>
     );
