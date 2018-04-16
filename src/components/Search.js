@@ -21,7 +21,7 @@ class Search extends Component {
     }
 
     this.updateLocation = this.updateLocation.bind(this);
-    this.selectLocation = this.selectLocation.bind(this);
+    // this.selectLocation = this.selectLocation.bind(this);
   }
 
   updateLocation(event) {
