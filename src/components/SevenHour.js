@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 import './styles/css/SevenHour.css';
 
-const SevenHour = ({ props }) => {
+ SevenHour = ({ props }) => {
   const forecastArray = props.map(data => {
     return <Card
       hour={data.hour}
@@ -18,4 +18,5 @@ const SevenHour = ({ props }) => {
     </div>
   );
 }
+
 export default SevenHour;

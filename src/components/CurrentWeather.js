@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/css/CurrentWeather.css';
 import changeWeatherImage from '../imageChanger.js';
+import './styles/css/CurrentWeather.css';
 
 const CurrentWeather = ({ props }) => {
   const { city, day, temp, weather, icon, high, low, summary } = props
