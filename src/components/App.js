@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { getCurrentWeatherForecast, getSevenHourForecast, getTenDayForecast } from '../ApiService';
 import getForecasts from '../apiCall';
 import WeatherComponent from './WeatherComponent';
-import ErrorPage from './404-error'
+import ErrorPage from './404-error';
 import Welcome from './Welcome';
 import Search from './Search';
 import './styles/css/App.css';
@@ -32,26 +32,26 @@ class App extends Component {
         currentWeatherData: userWeatherHistory.currentWeatherData,
         showWelcome: userWeatherHistory.showWeather
       });
-    };
+    }
   }
 
   apiCall({ state, city }) {
     getForecasts(state, city)
       .then(data => {
-          this.setState({
-            sevenHourData: getSevenHourForecast(data.hourly_forecast),
-            tenDayData: getTenDayForecast(data.forecast.simpleforecast.forecastday),
-            currentWeatherData: getCurrentWeatherForecast(data),
-            showWelcome: false,
-            error: false
-          })
-          localStorage.setItem('weather', JSON.stringify(this.state));
-        })
+        this.setState({
+          sevenHourData: getSevenHourForecast(data.hourly_forecast),
+          tenDayData: getTenDayForecast(data.forecast.simpleforecast.forecastday),
+          currentWeatherData: getCurrentWeatherForecast(data),
+          showWelcome: false,
+          error: false
+        });
+        localStorage.setItem('weather', JSON.stringify(this.state));
+      })
       .catch(err => {
         this.setState({ error: true });
         console.log(err);
-      })
-  };
+      });
+  }
 
   displayState() {
     const showWeather =
@@ -59,14 +59,14 @@ class App extends Component {
         currentWeatherData={this.state.currentWeatherData}
         sevenHourData={this.state.sevenHourData}
         tenDayData={this.state.tenDayData}
-      />
+      />;
 
     if (this.state.error) {
-      return <ErrorPage />
+      return <ErrorPage />;
     } else if (this.state.showWelcome) {
-      return <Welcome />
+      return <Welcome />;
     } else {
-      return showWeather
+      return showWeather;
     }
   }
 

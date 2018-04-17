@@ -17,8 +17,8 @@ const getCurrentWeatherForecast = (data) => {
     high: txt_forecast.forecastday[0].fcttext.split(`. `)[1],
     low: txt_forecast.forecastday[1].fcttext.split(`. `)[1],
     summary: txt_forecast.forecastday[0].fcttext_metric
-  }
-}
+  };
+};
 
 const getSevenHourForecast = (hourlyForecast) => {
   const sliceForecast = hourlyForecast.slice(0, 7);
@@ -38,11 +38,11 @@ const getSevenHourForecast = (hourlyForecast) => {
       hour: data.FCTTIME.hour,
       icon: changeWeatherImage(data.icon_url),
       temp: data.temp.english
-    }
-  })
+    };
+  });
 
-  return forecastArray
-}
+  return forecastArray;
+};
 
 const getTenDayForecast = (tenDayData) => {
   const sliceForecast = tenDayData.slice(0, 10);
@@ -54,9 +54,9 @@ const getTenDayForecast = (tenDayData) => {
       tempLow: data.low.fahrenheit,
       icon: changeWeatherImage(data.icon_url)
     };
-  })
+  });
 
-  return forecastArray
-}
+  return forecastArray;
+};
 
 export { getCurrentWeatherForecast, getSevenHourForecast, getTenDayForecast };

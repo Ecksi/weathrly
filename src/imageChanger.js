@@ -28,6 +28,6 @@ const changeWeatherImage = (image) => {
     image = '/images/thunder.svg';
   }
   return image;
-}
+};
 
 export default changeWeatherImage;

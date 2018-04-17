@@ -14,16 +14,18 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "sass": "sass --watch src/styles/scss:src/styles/css",
-    "sass:build": "sass — update src/styles/scss:src/styles/css"
+    "sass:build": "sass — update src/styles/scss:src/styles/css",
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/components/*.js"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1"
   },
   "jest": {
     "setupFiles": [
       "./__test-helpers__/storageMock.js"
     ]
   }
-
 }

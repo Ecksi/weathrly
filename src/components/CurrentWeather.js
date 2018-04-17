@@ -3,7 +3,7 @@ import changeWeatherImage from '../imageChanger.js';
 import './styles/css/CurrentWeather.css';
 
 const CurrentWeather = ({ props }) => {
-  const { city, day, temp, weather, icon, high, low, summary } = props
+  const { city, day, temp, weather, icon, high, low, summary } = props;
 
   return (
     <div className="currentWeather">
@@ -21,6 +21,6 @@ const CurrentWeather = ({ props }) => {
       <p className="current-summary">{summary}</p>
     </div>
   );
-}
+};
 
 export default CurrentWeather;

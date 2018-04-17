@@ -13,7 +13,7 @@ const ErrorPage = () => {
       <img className="cloud cloud-3" src="./images/cloud.svg" alt="cloud" />
       <img className="cloud cloud-4" src="./images/cloud.svg" alt="cloud" />
     </div>
-  )
-}
+  );
+};
 
 export default ErrorPage;
