@@ -7,8 +7,8 @@ const CurrentWeather = ({ props }) => {
 
   return (
     <div className="currentWeather">
-      <h1 className="current-day" >{day}</h1>
       <h1 className="current-city" >{city}</h1>
+      <h1 className="current-day" >{day}</h1>
       <div className="current-outside">
         <h2 className="current-temp" >{temp} &#176;</h2>
         <h2 className="current-weather" >{weather}</h2>
@@ -18,7 +18,7 @@ const CurrentWeather = ({ props }) => {
         <h2 className="current-high">{high}</h2>
         <h2 className="current-low">{low}</h2>
       </div>
-      <p className="current-summary" >{summary}</p>
+      <p className="current-summary">{summary}</p>
     </div>
   );
 }

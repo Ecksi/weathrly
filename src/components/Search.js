@@ -52,24 +52,24 @@ class Search extends Component {
         this.props.apiCall(this.state)
       }}>
         <input onChange={this.updateLocation}
-               type="text" 
-               className="location-input" 
-               name="city" 
-               value={this.state.city} 
-               list="cities-list"
-               placeholder="city" />
+          type="text"
+          className="location-input"
+          name="city"
+          value={this.state.city}
+          list="cities-list"
+          placeholder="city" />
         <datalist id="cities-list"
-                  className="results">{citySuggestions}</datalist>
-        <input onChange={this.updateLocation} 
-               type="text" 
-               className="location-input" 
-               name="state" 
-               value={this.state.state} 
-               list="states-list" 
-               placeholder="state" 
-               maxLength='2' />
+          className="results">{citySuggestions}</datalist>
+        <input onChange={this.updateLocation}
+          type="text"
+          className="location-input"
+          name="state"
+          value={this.state.state}
+          list="states-list"
+          placeholder="state"
+          maxLength='2' />
         <datalist id="states-list"
-                  className="results">{stateSuggestions}</datalist>
+          className="results">{stateSuggestions}</datalist>
         <input type="submit" className="submit-button" />
       </form>
 

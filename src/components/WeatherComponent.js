@@ -22,20 +22,20 @@ class WeatherComponent extends Component {
 
   render() {
     const tenDay = <TenDay props={this.props.tenDayData} />
-    const sevenHour =<SevenHour props={this.props.sevenHourData} />
+    const sevenHour = <SevenHour props={this.props.sevenHourData} />
 
     return (
       <div className="all-weather">
         <CurrentWeather props={this.props.currentWeatherData} />
         {this.state.showSevenHourWeather ?
-          <input onClick={this.toggleWeather} 
-                 type="submit"
-                 className="weather-toggle"
-                 value="Ten Day" /> :
-          <input onClick={this.toggleWeather} 
-                 type="submit"
-                 className="weather-toggle"
-                 value="Seven Hour" />}
+          <input onClick={this.toggleWeather}
+            type="submit"
+            id="weather-toggle"
+            value="Ten Day" /> :
+          <input onClick={this.toggleWeather}
+            type="submit"
+            id="weather-toggle"
+            value="Seven Hour" />}
         {this.state.showSevenHourWeather ? sevenHour : tenDay}
       </div>
     )
