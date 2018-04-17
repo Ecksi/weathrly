@@ -22,7 +22,7 @@ img {
 }
 
 .current-city {
-  margin: 0;	
+  margin-top: 5px;
   grid-area: d;
   display: flex;
   justify-content: center;
@@ -32,42 +32,65 @@ img {
 }
 
 .current-day {
-  margin: 0;
-  grid-area: c;
+  margin-bottom: 35px;
+  grid-area: d;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   font-size: 2rem;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
 .current-outside {
   grid-area: a;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
 .current-temp {
   margin-left: 10%;
   display: flex;
+  justify-content: center;
   font-size: 5rem;
   line-height: .5;
   text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
 }
 
 .current-weather {
-  margin-left: 10%;  
+  margin-left: 10%;
   display: flex;
+  justify-content: center;
   line-height: 0;
   font-size: 2rem;
+}
+
+.current-icon {
+  margin-left: 10%;
+  padding-top: 50px;
 }
 
 .current-spread {
   grid-area: h;
   margin-top: 20px;
-  font-size: .8rem;
+  font-size: 1.2rem;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  
+}
+
+.current-high {
+  margin-bottom: 0px;
+}
+.current-low {
+  margin-top: 15px;
 }
 
 .current-summary {
-  margin-top: 30px;
-  grid-area: g;
   display: flex;
-  justify-content: center;
-  font-size: 1rem;
+  align-items: flex-start;
+  width: 50%;
+  margin-top: 0px;
+  margin-left: 25%;
+  grid-area: k;
+  font-size: 1.1rem;
+  text-align: center;
 }

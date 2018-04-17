@@ -7,12 +7,14 @@
   top: 0;
   left: 0;
   margin: 0;
-  background: linear-gradient( rgb(218, 131, 84), rgb(193, 94, 7));
+  background-image: url('https://wallpapersite.com/images/wallpapers/miui-8-2560x1440-rainy-weather-background-minimal-hd-10471.png');
+  background-size: cover;
 }
 
 .welcome-header {
   margin: 18%;
   font-size: 4rem;
   font-family: 'Ubuntu', sans-serif;
-  color: #07c1a8;
+  color: #09c1a8;
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
 }
