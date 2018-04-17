@@ -1,17 +1,17 @@
 .Card {
+  height: 200px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200px;
-  width: 350px;
   background-color: #FFF;
   border: none;
-  transition: 0.75s
+  transition: 0.75s;
 }
 
 .cardHeader {
-  color: rgba(74, 77, 78, 0.845);
   padding-top: 5px;
+  color: rgba(74, 77, 78, 0.845);
   font-size: 18px;
 }
 
@@ -25,9 +25,8 @@
 }
 
 img {
-  padding-top: 10px;
   width: 80%;
-
+  padding-top: 10px;
 }
 
 .ten-day-high-low {
