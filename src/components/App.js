@@ -54,8 +54,8 @@ class App extends Component {
         }
       })
   }
-  
-  render() {
+
+  displayState() {
     const showWeather = 
       <WeatherComponent 
         currentWeatherData={this.state.currentWeatherData} 
@@ -63,19 +63,19 @@ class App extends Component {
         tenDayData={this.state.tenDayData}
       />
 
-    const displayStateorSomething = () => {
-      if (this.state.error) {
-       return <ErrorPage />
-      } else if (this.state.showWelcome) {
-        return <Welcome />
-      } else {
-        return showWeather
-      }
+    if (this.state.error) {
+     return <ErrorPage />
+    } else if (this.state.showWelcome) {
+      return <Welcome />
+    } else {
+      return showWeather
     }
-
+  }
+  
+  render() {
     return (
       <div className="Weathrly">
-        {displayStateorSomething()}
+        {this.displayState()}
         <Search apiCall={this.apiCall} welcome={this.state} />
       </div>
     );
