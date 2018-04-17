@@ -7,7 +7,6 @@ const getForecasts = (state, cityName) => {
 
   return fetch(proxyurl + url + apikey + city)
     .then(res => res.json())
-    .catch(err => console.log(err));
 }
 
 export default getForecasts;
