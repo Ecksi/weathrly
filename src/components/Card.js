@@ -21,11 +21,7 @@ const Card = ({ hour, condition, image, temp, call, day, tempHigh, tempLow }) =>
     </div>
   )
 
-  if (call === '7-hour') {
-    return sevenHourCard;
-  } else {
-    return tenHourCard;
-  }
+  return call === '7-hour' ? sevenHourCard : tenHourCard
 }
 
 export default Card;

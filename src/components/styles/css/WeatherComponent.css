@@ -10,12 +10,12 @@
   box-shadow: 0 14px 45px rgba(248, 165, 165, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
 }
 
-.weather-toggle {
+#weather-toggle {
   height: 50px;
   width: 100px;
   align-self: flex-end;
   background-color: rgba(124, 128, 130, 0.3);
-  color: rgb(188,200,201);
+  color: rgb(218, 226, 226);
   text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
   font-size: 16px;
   border: none;

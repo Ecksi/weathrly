@@ -18,4 +18,5 @@ const SevenHour = ({ props }) => {
     </div>
   );
 }
+
 export default SevenHour;
