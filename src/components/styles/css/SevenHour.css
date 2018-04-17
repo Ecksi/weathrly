@@ -1,6 +1,6 @@
 .seven-hour {
+  width: 100vw;
   display: flex;
   justify-content: center;
-  width: 100vw;
   border-radius: 10px;
 }

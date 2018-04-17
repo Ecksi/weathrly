@@ -1,14 +1,14 @@
 .ten-day {
+  width: 100vw;
   display: flex;
   justify-content: center;
-  width: 100vw;
   border-radius: 10px;
 }
 
 .ten-day-high-low {
+  margin-right: 15px;
   display: flex;
   justify-content: center;
-  margin-right: 15px;
 }
 
 .ten-day-high-low h3 {
