@@ -38,20 +38,20 @@ class App extends Component {
   apiCall({ state, city }) {
     getForecasts(state, city)
       .then(data => {
-        if (Object.keys(data).length === 1) {
-          this.setState({ error: true })
-        } else {
           this.setState({
             sevenHourData: getSevenHourForecast(data.hourly_forecast),
             tenDayData: getTenDayForecast(data.forecast.simpleforecast.forecastday),
             currentWeatherData: getCurrentWeatherForecast(data),
             showWelcome: false,
             error: false
-          });
+          })
           localStorage.setItem('weather', JSON.stringify(this.state));
-        };
-      });
-  }
+        })
+      .catch(err => {
+        this.setState({ error: true });
+        console.log(err);
+      })
+  };
 
   displayState() {
     const showWeather =
