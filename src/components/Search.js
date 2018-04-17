@@ -18,7 +18,7 @@ class Search extends Component {
     this.state = {
       city: '',
       state: ''
-    }
+    };
 
     this.updateLocation = this.updateLocation.bind(this);
   }
@@ -37,19 +37,19 @@ class Search extends Component {
     const citySuggestions = cityTrie.sortedSuggestions.map((city, index) => {
       return (
         <option key={city}>{city}</option>
-      )
-    })
+      );
+    });
 
     const stateSuggestions = stateTrie.sortedSuggestions.map(state => {
       return (
         <option key={state}>{state}</option>
-      )
-    })
+      );
+    });
 
     const userInputs =
       <form onSubmit={(event) => {
         event.preventDefault();
-        this.props.apiCall(this.state)
+        this.props.apiCall(this.state);
       }}>
         <input onChange={this.updateLocation}
           type="text"
@@ -75,7 +75,7 @@ class Search extends Component {
           className="results">{stateSuggestions}
         </datalist>
         <input type="submit" className="submit-button" />
-      </form>
+      </form>;
 
     return (
       this.props.welcome.showWelcome ?
@@ -85,7 +85,7 @@ class Search extends Component {
         <div className="search">
           {userInputs}
         </div>
-    )
+    );
   }
 }
 

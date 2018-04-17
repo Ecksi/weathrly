@@ -10,13 +10,13 @@ const TenDay = ({ props }) => {
       tempLow={data.tempLow}
       image={data.icon}
     />;
-  })
+  });
 
   return (
     <div className="ten-day">
       {forecastArray}
     </div>
   );
-}
+};
 
 export default TenDay;

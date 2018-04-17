@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import CurrentWeather from './CurrentWeather';
 import SevenHour from './SevenHour';
 import TenDay from './TenDay';
-import './styles/css/WeatherComponent.css'
+import './styles/css/WeatherComponent.css';
 
 class WeatherComponent extends Component {
   constructor(props) {
@@ -11,18 +11,18 @@ class WeatherComponent extends Component {
       showSevenHourWeather: true
     };
 
-    this.toggleWeather = this.toggleWeather.bind(this)
+    this.toggleWeather = this.toggleWeather.bind(this);
   }
 
   toggleWeather() {
     this.setState({
       showSevenHourWeather: !this.state.showSevenHourWeather
-    })
+    });
   }
 
   render() {
-    const tenDay = <TenDay props={this.props.tenDayData} />
-    const sevenHour = <SevenHour props={this.props.sevenHourData} />
+    const tenDay = <TenDay props={this.props.tenDayData} />;
+    const sevenHour = <SevenHour props={this.props.sevenHourData} />;
 
     return (
       <div className="all-weather">
@@ -38,7 +38,7 @@ class WeatherComponent extends Component {
             value="Seven Hour" />}
         {this.state.showSevenHourWeather ? sevenHour : tenDay}
       </div>
-    )
+    );
   }
 }
 

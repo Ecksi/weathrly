@@ -19,9 +19,9 @@ const Card = ({ hour, condition, image, temp, call, day, tempHigh, tempLow }) =>
         <h3 className="cardText cardLow">{tempLow}&#176;</h3>
       </div>
     </div>
-  )
+  );
 
-  return call === '7-hour' ? sevenHourCard : tenHourCard
-}
+  return call === '7-hour' ? sevenHourCard : tenHourCard;
+};
 
 export default Card;

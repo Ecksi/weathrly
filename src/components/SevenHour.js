@@ -10,13 +10,13 @@ const SevenHour = ({ props }) => {
       temp={data.temp}
       call='7-hour'
     />;
-  })
+  });
 
   return (
     <div className="seven-hour">
       {forecastArray}
     </div>
   );
-}
+};
 
 export default SevenHour;
