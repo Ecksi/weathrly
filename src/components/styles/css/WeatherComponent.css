@@ -1,10 +1,9 @@
 .all-weather {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  /* background-color: hsla(201, 100%, 50%, 1); */
   background-image: url('https://wallpapersite.com/images/wallpapers/miui-8-1600x900-weather-background-minimal-hd-10470.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,13 +11,13 @@
 }
 
 .weather-toggle {
+  height: 50px;
+  width: 100px;
   align-self: flex-end;
   background-color: rgba(124, 128, 130, 0.3);
   color: rgb(188,200,201);
   text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
   font-size: 16px;
-  height: 50px;
-  width: 100px;
   border: none;
   border-radius: 5%;
 }
