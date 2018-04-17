@@ -8,7 +8,7 @@ class WeatherComponent extends Component {
   constructor(props) {
     super();
     this.state = {
-      showWeather: true
+      showSevenHourWeather: true
     };
 
     this.toggleWeather = this.toggleWeather.bind(this)
@@ -16,7 +16,7 @@ class WeatherComponent extends Component {
 
   toggleWeather() {
     this.setState({
-      showWeather: !this.state.showWeather
+      showSevenHourWeather: !this.state.showSevenHourWeather
     })
   }
 
@@ -34,10 +34,10 @@ class WeatherComponent extends Component {
     return (
       <div className="all-weather">
         <CurrentWeather props={this.props.currentWeatherData} />
-        {this.state.showWeather ? 
+        {this.state.showSevenHourWeather ? 
           <input type="submit" onClick={this.toggleWeather} className="weather-toggle" value="Ten Day" /> :
           <input type="submit" onClick={this.toggleWeather} className="weather-toggle" value="Seven Hour" /> }
-        {this.state.showWeather ? sevenHour : tenDay }
+        {this.state.showSevenHourWeather ? sevenHour : tenDay }
       </div>
     )
   } 

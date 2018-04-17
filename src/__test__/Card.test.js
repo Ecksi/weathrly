@@ -3,7 +3,7 @@ import Card from '../components/Card';
 import { shallow, mount } from 'enzyme';
 import '../setupTests';
 
-describe('Welcome Component', () => {
+describe('Card Component', () => {
 
   it('Should return a card object when passed data', () => {
     const expectedValues = {
