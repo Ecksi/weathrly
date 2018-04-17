@@ -21,11 +21,4 @@ describe('Welcome Component', () => {
     expect(wrapper.state('showSevenHourWeather')).toEqual(false);  
   })
 
-  it('Should be able to toggle off of showSevenHourWeather', () => {
-    let wrapper = shallow(<WeatherComponent />);
-
-    wrapper.instance().toggleWeather();
-    expect(wrapper.state('showSevenHourWeather')).toEqual(false);  
-  })
-
 })
