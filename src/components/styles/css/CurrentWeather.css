@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 80px 150px 10px 200px;
   grid-template-areas: 
-                      "a c g"
+                      "q c g"
                       "a d h"
                       "b e j"
                       "i f k";
@@ -42,7 +42,7 @@ img {
 }
 
 .current-outside {
-  grid-area: a;
+  grid-area: q;
   text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
@@ -70,11 +70,9 @@ img {
 
 .current-spread {
   grid-area: h;
-  margin-top: 20px;
   font-size: 1.2rem;
   text-align: center;
   text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-  
 }
 
 .current-high {
@@ -93,4 +91,110 @@ img {
   grid-area: k;
   font-size: 1.1rem;
   text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .currentWeather {
+    grid-template-columns: 1fr 0.02fr 1fr;
+  }
+
+  .current-city,
+  .current-day,
+  .current-icon {
+    grid-area: a;
+  }
+
+  .current-outside {
+    grid-area: b;
+    margin-top: 50px;
+  }
+
+  .current-temp {
+    font-size: 4em;
+  }
+
+  .current-icon {
+    margin-left: 25%;
+    padding-top: 75px;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .currentWeather {
+    grid-template-rows: 80px 200px 120px 100px;
+    grid-template-columns: 0.02fr 1fr 0.02fr;
+  }
+
+  .current-city,
+  .current-day,
+  .current-icon {
+    grid-area: c;
+  }
+
+  .current-temp,
+  .current-weather {
+    margin-top: 150px;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+
+  .current-city {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  .current-day {
+    margin-top: 0;
+    grid-area: d;
+    align-items: flex-start;
+  }
+
+  .current-outside {
+    grid-area: d;
+    margin-top: 0;
+  }
+
+  .current-spread {
+    grid-area: e;
+  }
+
+  .current-summary {
+    grid-area: f;
+    align-items: flex-end;
+  }
+
+ .current-icon {
+    margin-left: 31%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .current-city {
+    font-size: 4em;
+    text-shadow: 2px 3px 0px rgba(0,0,0,0.2);
+  }
+
+  .current-temp {
+    font-size: 3em;
+    text-shadow: 2px 3px 0px rgba(0,0,0,0.2);
+  }
+
+  .current-icon {
+    width: 175px;
+    margin-left: 20%;
+  }
+
+  .current-spread {
+    font-size: 0.8em;
+  }
+
+  .current-summary {
+    font-size: 0.7em;
+  }
+
+  .current-weather {
+    font-size: 1 em;
+    margin-top: 135px;
+  }
 }
