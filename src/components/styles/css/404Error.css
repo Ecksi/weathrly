@@ -1,0 +1,61 @@
+.error-page {
+  position: absolute;
+  margin-top: 0;
+  top: 0;
+  padding-top: 100px;
+  height: 90vh;
+  width: 100vw;
+  opacity: 20%;
+  /* background-color: blue; */
+  background: linear-gradient( #36cc98, rgb(177, 177, 176));  
+  /* background-image: url('/images/Snowstorm_S3E1.png'); */
+  background-repeat: no-repeat;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  
+}
+
+.error-page h1  {
+  text-align: center;
+  font-size: 6rem;
+  line-height: .1;
+}
+
+.error-page h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.error-page h3 {
+  text-align: center;
+}
+
+.error-page h4 {
+  text-align: center;
+}
+
+.cloud {
+  position: fixed;
+  width: 150px;
+  opacity: 50%;
+}
+
+.cloud-1 {
+  left: 600px;
+}
+
+.cloud-2 {
+  left: 900px;
+  bottom: 600px;  
+}
+
+.cloud-3 {
+  left: 800px;
+  bottom: 500px;
+}
+
+.cloud-4 {
+  left: 300px;
+  bottom: 300px;
+}
+
