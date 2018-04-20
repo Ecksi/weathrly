@@ -9,7 +9,7 @@ describe('Api Service', () => {
     it('Should return key of current weather with appropriate value', () => {
       let expectedValue = {
         city: 'Louisville', 
-        day: 'Monday', 
+        day: 'Friday', 
         temp: 46, 
         weather: 'Mostly Cloudy', 
         icon: 'http://icons.wxug.com/i/c/k/mostlycloudy.gif', 
