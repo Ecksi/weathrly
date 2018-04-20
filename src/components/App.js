@@ -24,6 +24,13 @@ class App extends Component {
   componentDidMount() {
     const localStorageWeather = localStorage.getItem('weather');
     const userWeatherHistory = JSON.parse(localStorageWeather);
+    // const userWeatherHistory = {
+    //   sevenHourData: null,
+    //   tenDayData: null,
+    //   currentWeatherData: null,
+    //   showWelcome: true,
+    //   error: false
+    // };
 
     if (userWeatherHistory) {
       this.setState({
