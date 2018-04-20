@@ -39,4 +39,4 @@ describe('App Component', () => {
 
     expect(wrapper.state()).toEqual(expectedValues)
   })
-})
+});
